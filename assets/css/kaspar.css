@@ -1,0 +1,208 @@
+/* Start variables */
+:root {
+    --main-color:#19c8fa;
+    --transparent-color: rgba(15 115 143 / 70%)
+}
+/* end variables */
+/* Start Global Rules */
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: black;
+    color: white;
+}
+ul {
+    list-style-type: none;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Media Queries */
+/* small devices */
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* medium devices */
+@media  (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* large devices */
+@media (min-width:1200px) {
+    .container {
+        width:1170px;
+    }
+}
+
+/* End Global Rules */
+/* Start Header */
+header {
+position: absolute;
+width: 100%;
+z-index: 99;
+left: 0;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 96px;
+}
+header .container::after {
+    content: "";
+    position: absolute;
+    background-color: #a2a2a2;
+    width: calc(100% - 30px);
+    height:1px;
+    bottom: -1px;
+    left:15px;
+}
+header nav {
+    flex:1;
+      display: flex;
+    justify-content: flex-end;
+    align-items: center;
+} 
+header nav i {
+    color: white;
+    font-size:22px;
+}  
+@media screen and (min-width:768px) {
+  header .toggle-menu {
+    display: none;
+  } 
+}
+
+header  nav ul {
+    display: flex;
+}
+@media  screen and (max-width:767px){
+     header  nav  ul {
+    display: none;
+  }
+   header .toggle-menu:hover + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top:100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+  }
+  header .toggle-menu:hover + ul a {
+    padding: 15px;
+    border-bottom: 1px solid #a2a2a2
+  }
+
+    }
+  
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding:40px 10px;
+    font-size: 14px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    position: relative;
+    z-index: 2;
+   }
+.active {
+    color: var(--main-color);
+   }
+ .form i:hover ,header nav ul li a:hover {
+    color: var(--main-color);
+ }
+ .active:hover{
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+header img {
+    height: 2.5rem;
+}
+header .form {
+    width:2.5rem;
+    height: 1.9rem;
+    position: relative;
+    border-left: 1px solid white ;
+    margin-left: 30px;
+}
+.form i {
+    color: white;
+    position: absolute;
+    right:0;
+    top:50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    font-size: 20px;
+}
+/* End Header */
+/* Start landing section */
+.landing {
+    background-color: black;
+    background-image: url(../images/landing.webp);
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+}
+.overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left:0;
+    top:0;
+}
+.landing .text {
+    position: absolute;
+    background-color:var(--transparent-color);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    width:60%;
+    padding:40px;
+    display: flex;
+    justify-content: flex-end;
+} 
+.landing .content {
+       max-width: 375px;
+}
+.landing .content h2 {
+ margin-bottom: 20px;
+ font-weight: normal;
+ font-size: 2rem;
+ line-height: 1.5;
+ color: white;
+
+
+}
+.landing .content p{
+    font-size: 1rem;
+    line-height: 2;
+}
+/*  End landing section */
