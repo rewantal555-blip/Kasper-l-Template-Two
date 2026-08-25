@@ -1,7 +1,9 @@
 /* Start variables */
 :root {
-  --main-color: #19c8fa;
+  --main-color: #0296c1;
   --transparent-color: rgba(15 115 143 / 70%);
+  --section-padding: 100px 0;
+  --secondary-color: #777;
 }
 /* end variables */
 /* Start Global Rules */
@@ -15,8 +17,7 @@ html {
 }
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: black;
-  color: white;
+  color: #333;
 }
 ul {
   list-style-type: none;
@@ -30,11 +31,59 @@ ul {
 h1,
 h2,
 h3 {
-  margin-bottom: 20px;
+}
+.main-heading {
+  text-align: center;
+}
+.main-heading h2 {
+  padding: 70px;
   font-weight: normal;
-  font-size: 2rem;
-  line-height: 1.5;
-  padding: 10px;
+  font-size: 2.5rem;
+  position: relative;
+  color: black;
+  text-transform: uppercase;
+}
+.main-heading h2::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  width: 120px;
+  height: 2px;
+
+  bottom: 50px;
+  background-color: #333;
+}
+.main-heading h2::after {
+  position: absolute;
+  content: "";
+  left: 50%;
+  bottom: 41px;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 2px solid #333;
+  background-color: white;
+}
+.main-heading p {
+  line-height: 2;
+  margin: 0 auto 100px;
+  max-width: 100%;
+  color: var(--secondary-color);
+  width: 550px;
 }
 /* Media Queries */
 /* small devices */
@@ -202,6 +251,7 @@ header .form {
   display: flex;
   justify-content: flex-end;
 }
+
 .landing .content {
   max-width: 375px;
 }
@@ -215,9 +265,18 @@ header .form {
 .landing .content p {
   font-size: 1rem;
   line-height: 2;
+  color: white;
 }
 @media screen and (max-width: 567px) {
   .landing .text {
+    /* position: absolute;
+        top: 55%;
+        padding: 40px; */
+    width: 100%;
+  }
+}
+@media screen and (max-width: 567px) {
+  .landing .content {
     /* position: absolute;
         top: 55%;
         padding: 40px; */
@@ -233,20 +292,20 @@ header .form {
   -ms-transform: translateY(50%);
   -o-transform: translateY(50%);
 }
+@media screen and (max-width: 768px) {
+  .landing .change-background {
+    display: none;
+  }
+}
 .fa-chevron-left {
   left: 30px;
+  color: white;
 }
 .fa-chevron-right {
   right: 30px;
+  color: white;
 }
-@media screen and (max-width: 768px) {
-  .fa-chevron-left {
-    left: 0;
-  }
-  .fa-chevron-right {
-    right: 0;
-  }
-}
+
 .landing .bullets {
   position: absolute;
   left: 50%;
@@ -258,39 +317,58 @@ header .form {
   -o-transform: translateX(-50%);
   display: flex;
   justify-content: space-around;
-
 }
 .landing .bullets li {
   width: 20px;
   height: 20px;
   border: 1px solid white;
-  border-radius:50%;
-  -webkit-border-radius:50%;
-  -moz-border-radius:50%;
-  -ms-border-radius:50%;
-  -o-border-radius:50%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
   margin-right: 10px;
 }
 .landing .bullets li.active {
-    background-color: var(--main-color);
+  background-color: var(--main-color);
 }
 /*  End landing section */
-/* Start Servuces section */
+/* Start Services section */
 #services {
-  background-color: white;
-  color: black;
-  position: relative;
+  padding: var(--section-padding);
 }
-#services h2 {
-  text-align: center;
+#services .srv-box {
+  display: flex;
 }
-#services h2::after {
-  content: "";
-  position: absolute;
-  background-color: #052435;
-  width: calc(50% - 30px);
-  height: 1px;
-  bottom: 4px;
-  left: 264px;
+#services .srv-box i {
+  margin-right: 50px;
+}
+@media screen and (max-width:767px) {
+   #services .srv-box {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 40px;
+    align-items: center;
+    text-align: center;
+   } 
+   #services .srv-box i {
+    margin: 0 0 30px;
+   }
+}
+#services .srv-box h3 {
+  margin-bottom: 30px;
+  color: var(--main-color);
+}
+#services .srv-box p {
+  line-height: 2;
+  color: var(--secondary-color);
+}
+@media screen and (min-width: 768px) {
+  #services .services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    grid-column-gap: 40px;
+    grid-row-gap: 60px;
+  }
 }
 /* End Services section*/
