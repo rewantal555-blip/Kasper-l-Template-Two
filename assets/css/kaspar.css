@@ -372,3 +372,74 @@ header .form {
   }
 }
 /* End Services section*/
+/* Start Design Section */
+#design {
+    padding: var(--section-padding);
+    background-image: url(../images/design-features.webp);
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+   align-items: center;
+    display: flex;
+}
+/* #design .container {
+    display: flex;
+    align-items: center;
+} */
+#design::before {
+    content: "";
+     background-color: rgba(0 0 0 / 50%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+#design .image, #design .text {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+#design .image {
+    text-align: center;
+}
+#design .image img {
+    position: relative;
+    bottom:-150px;
+}
+
+@media screen and (max-width:767px) {
+    #design .image img  {
+        display: none;
+    }
+    #design .text {
+   flex:none;
+   font-size: 13px;
+    }
+}
+#design .text {
+    color: white;
+    padding: 50px;
+    background-color: var(--transparent-color);
+    
+}
+#design .text h2 {
+    margin-bottom: 40px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+#design .text ul li {
+    padding: 15px 0;
+}
+#design .text ul li::before {
+    font-family: "Font Awesome 5 Free";
+    content: '\f390';
+    font-weight: 900;
+
+    position: relative;
+    top: 1px;
+    margin-right: 20px;
+}
+/* End Design Section */
