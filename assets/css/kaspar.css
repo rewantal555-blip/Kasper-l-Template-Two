@@ -577,3 +577,25 @@ padding: 10px 20px;
 text-transform: uppercase;
 }
 /*End Video Section */
+/* start About section */
+#about {
+    padding-top: 70px;
+    overflow: hidden;
+}
+#about img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    position: relative;
+    bottom: -41px;
+    margin-top: -80px;
+}
+@media screen and (min-width:1040px) {
+    #about img {
+ bottom: -94px;
+    margin-top: -130px; 
+    } 
+}
+/* End about Section */
+/* Start statistics Section */
+
+/* End statistics Section */
